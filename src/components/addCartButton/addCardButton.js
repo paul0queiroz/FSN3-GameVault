@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddCardButton({ onClick }) {
+function AddCartButton({ onClick }) {
   return (
     <button onClick={onClick} style={styles.button}>
       Add Card
@@ -20,4 +20,4 @@ const styles = {
   },
 };
 
-export default AddCardButton;
+export default AddCartButton;
