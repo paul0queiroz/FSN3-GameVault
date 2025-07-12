@@ -12,8 +12,46 @@
     margin: auto;
 }
 
+#product-title{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+    padding: 10px 0px;
+    margin-bottom: 10;
+}
+
 #product-description{
     text-align: justify;
+}
+
+.product-price{
+    color:#00607F;
+}
+
+#control-quantity{
+    border: 1px solid black;
+    display: flex;
+    width: 100px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#control-quantity button{
+    background-color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: consolas;
+    border: none;
+}
+
+#control-quantity button:hover{
+    background-color: rgba(238, 238, 238, 0.548);
+}
+
+#control-quantity span{
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Medium (md) */
