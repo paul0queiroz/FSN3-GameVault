@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import Home from "./pages/Home";
 // import Products from "./pages/Products";
-// import ProductDetail from "./pages/ProductDetail";
+import ProductDetail from "./pages/ProductDetail";
 // import Cart from "./pages/Cart";
 // import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/produto/:id" element={<ProductDetail />} />
         <Route path="/carrinho" element={<Cart />} />
         <Route path="/contato" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
