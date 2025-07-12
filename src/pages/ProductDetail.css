@@ -1,0 +1,33 @@
+#product-side{
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    max-width: 500px;
+}
+
+#product-image{
+    width: 400px;
+    max-height: 500px;
+    object-fit: fill;
+    margin: auto;
+}
+
+#product-description{
+    text-align: justify;
+}
+
+/* Medium (md) */
+@media (min-width: 768px){
+    #product-detail{
+        justify-content: center;
+    }
+
+    #product-side{
+        margin: 0px;
+    }
+
+    #product-image{
+        margin: 0px;
+        height: 500px;
+    }
+}
