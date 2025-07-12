@@ -3,6 +3,7 @@ import './NotFound.css';
 function NotFound(){
     return(
         <>
+            Página 404
         </>
     );
 }

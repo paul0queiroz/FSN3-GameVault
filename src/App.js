@@ -12,16 +12,16 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/produtos" element={<Products />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        {/* <Route path="/produtos" element={<Products />} /> */}
         <Route path="/produto/:id" element={<ProductDetail />} />
-        <Route path="/carrinho" element={<Cart />} />
-        <Route path="/contato" element={<Contact />} />
+        {/* <Route path="/carrinho" element={<Cart />} /> */}
+        {/* <Route path="/contato" element={<Contact />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
