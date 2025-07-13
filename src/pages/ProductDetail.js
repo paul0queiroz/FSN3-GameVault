@@ -25,14 +25,6 @@ function ProductDetail() {
 
   return (
     <>
-      {/* Botões de teste para navegar entre items */}
-      {/*}
-            <Container fluid className='d-flex flex-row justify-content-center gap-3 p-2'>
-                <Button onClick={() => navigate('/produto/' + (Number(productId) - 1))}>Anterior</Button>
-                <Button onClick={() => navigate('/produto/' + (Number(productId) + 1))}>Próximo</Button>
-            </Container>
-            {*/}
-
       <Container
         fluid
         id="product-detail"
@@ -79,7 +71,7 @@ function ProductDetail() {
 
               <Button
                 className="fs-5"
-                onClick={() => addToCart(product, quantity)}
+                onClick={() => {addToCart(product, quantity); setQuantity(1)}}
               >
                 Adicionar ao carrinho
               </Button>
