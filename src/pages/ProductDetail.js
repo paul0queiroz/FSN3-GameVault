@@ -12,32 +12,47 @@ function ProductDetail() {
     const productId = useParams().id;
     const product = getProductByID(productId);
 
+    // Funções para modificar a quantidade
     const incrementQuantity = () => setQuantity(quantity<99? quantity + 1 : quantity);
     const decrementQuantity = () => setQuantity(quantity>1? quantity - 1 : quantity);
 
+    // Se o produtor especificador não for encontado, redireciona
     if (product === undefined)
         return <Navigate to='/404' />;
 
     return (
         <>
-            <Button onClick={() => navigate('/produto/' + (Number(productId) - 1))}>Anterior</Button>
-            <Button onClick={() => navigate('/produto/' + (Number(productId) + 1))}>Próximo</Button>
+            {/* Botões de teste para navegar entre items */}
+            {/*}
+            <Container fluid className='d-flex flex-row justify-content-center gap-3 p-2'>
+                <Button onClick={() => navigate('/produto/' + (Number(productId) - 1))}>Anterior</Button>
+                <Button onClick={() => navigate('/produto/' + (Number(productId) + 1))}>Próximo</Button>
+            </Container>
+            {*/}
+
             <Container fluid id='product-detail' className="d-flex flex-column flex-md-row gap-1 gap-md-3 p-3">
+                
                 <Image src={product.image} className='border border-dark' id="product-image" alt={product.name} />
+
                 <Container fluid className='d-flex flex-column' id="product-side">
                     <h1 className="display-5 fs-4" id="product-title">{product.name}</h1>
+
                     <Container id='product-description' className='m-0 p-0'>
                         {product.description}
                     </Container>
-                    <h3 className="product-price">R$ {product.price.replace(".", ",")}</h3>
-                    <Container flex className='d-flex flex-row justify-content-center gap-1'>
-                        <ButtonGroup aria-label="Quantity Control" id="control-quantity">
-                            <Button variant="light" onClick={decrementQuantity}>-</Button>
-                            <span>{String(quantity).padStart(2, '0')}</span>
-                            <Button variant="light" onClick={incrementQuantity}>+</Button>
-                        </ButtonGroup>
+                    
+                    <Container fluid className='m-auto text-center d-flex flex-column gap-2 mt-4 mt-md-0' id="shopping-info">
+                        <h3 className="product-price">R$ {String(Number(product.price).toFixed(2)).replace(".", ",")}</h3>
+                        
+                        <Container flex className='d-flex flex-row justify-content-center gap-3'>
+                            <ButtonGroup aria-label="Quantity Control" id="control-quantity">
+                                <Button variant="light" onClick={decrementQuantity}>-</Button>
+                                <span>{String(quantity).padStart(2, '0')}</span>
+                                <Button variant="light" onClick={incrementQuantity}>+</Button>
+                            </ButtonGroup>
 
-                        <Button>Adicionar ao carrinho</Button>
+                            <Button className="fs-5">Adicionar ao carrinho</Button>
+                        </Container>
                     </Container>
 
                 </Container>
