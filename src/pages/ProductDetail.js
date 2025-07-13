@@ -6,6 +6,19 @@ import products from "../data/products";
 import { useCart } from "../contexts/CartContext";
 
 import { ButtonGroup, Button, Container, Image } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+
+const notifySuccess = (Mensagem) =>
+    toast.info(Mensagem, {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
 function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
@@ -30,6 +43,7 @@ function ProductDetail() {
         id="product-detail"
         className="d-flex flex-column flex-md-row gap-1 gap-md-3 p-3"
       >
+        <ToastContainer />
         <Image
           src={product.image}
           className="border border-dark"
@@ -71,7 +85,7 @@ function ProductDetail() {
 
               <Button
                 className="fs-5"
-                onClick={() => {addToCart(product, quantity); setQuantity(1)}}
+                onClick={() => {addToCart(product, quantity); setQuantity(1); notifySuccess("Item adicionado ao carrinho.")}}
               >
                 Adicionar ao carrinho
               </Button>
