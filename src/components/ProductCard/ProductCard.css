@@ -1,124 +1,119 @@
-/* src/components/ProductCard/ProductCard.css */
 .product-card {
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   overflow: hidden;
   max-width: 100%;
-  box-shadow: 0 0 14px 0 rgba(75, 3, 116, 0.15);
-  transition: transform 0.2s ease-in-out;
+  background-color: rgba(30, 30, 40, 0.9);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #fff;
+  color: #e0e0e0;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  border-color: rgba(160, 32, 240, 0.5);
 }
 
 .product-category-tag {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   color: #fff;
-  background: rgb(34, 34, 34);
-  padding: 5px 10px;
+  background: linear-gradient(45deg, #a020f0, #8a2be2);
+  padding: 6px 12px;
   border-radius: 50px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .product-image {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: contain;
-  background-color: #f2f2f2;
-  padding: 10px;
+  background-color: #0f0f1a;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
 .product-info {
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: center;
 }
 
 .product-name {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-  color: rgb(34, 34, 34);
-}
-
-.product-rating {
-  font-size: 14px;
-  color: rgb(34, 34, 34);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 2px;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #ffde59;
+  text-shadow: 0 0 5px rgba(255, 222, 89, 0.4);
+  font-family: 'Exo 2', sans-serif;
 }
 
 .product-price {
-  font-size: 20px;
+  font-size: 24px; 
   font-weight: bold;
-  color: rgb(34, 34, 34);
+  color: #7aff82; 
   margin-top: auto;
-  margin-bottom: 16px;
+  margin-bottom: 20px; 
+  font-family: 'Press Start 2P', cursive, monospace;
 }
 
 .product-actions {
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  flex: 1;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .btn-card-transparant,
 .btn-card {
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center !important;
   flex: 1;
-  padding: 8px 10px;
-  border: 2px solid rgb(34, 34, 34);
+  padding: 12px 15px;
+  border: 2px solid #5a189a;
   border-radius: 50px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  transition: background-color 0.2s;
-}
-
-.btn-card-transparant {
-  background-color: #fff;
-  color: rgb(34, 34, 34);
-}
-
-.btn-card-transparant:hover {
-  background-color: #fff;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-card {
-  background-color: rgb(34, 34, 34);
-  color: #fff;
+  background: linear-gradient(45deg, #a020f0, #8a2be2) !important;
+  color: #fff !important;
 }
 
 .btn-card:hover {
-  background-color: rgb(34, 34, 34);
+  background: linear-gradient(45deg, #8a2be2, #a020f0) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(160, 32, 240, 0.7);
 }
 
-/* Estilos para as estrelas SVG */
-.product-rating svg {
-  width: 20px;
-  height: 20px;
-  stroke: #ffd700;
+.btn-card-transparant {
+  background-color: transparent !important;
+  color: #a020f0;
 }
 
-.product-rating .star-filled {
-  fill: #ffd700;
-}
-
-.product-rating .star-empty {
-  fill: transparent;
+.btn-card-transparant:hover {
+  background-color: rgba(160, 32, 240, 0.1) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
