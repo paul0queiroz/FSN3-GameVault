@@ -12,21 +12,21 @@ import "../../styles/Footer.css";
 
 const Footer = () => {
   const games = [
-    { name: "Zelda: Skyward Sword", link: "/produto/8" },
-    { name: "Doom (1983)", link: "/produto/9" },
-    { name: "Pokemon Emerald", link: "/produto/10" },
-    { name: "Metal Gear Solid 3: Snake Eater", link: "/produto/11" },
-    { name: "Resident Evil 4", link: "/produto/12" },
-    { name: "Mortal Kombat (1992)", link: "/produto/13" },
+    { name: "Zelda: Skyward Sword", link: "/produto/101" },
+    { name: "Doom (1983)", link: "/produto/8" },
+    { name: "GTA: San Andreas", link: "/produto/10" },
+    { name: "A Bug's Life", link: "/produto/11" },
+    { name: "Resident Evil 4", link: "/produto/6" },
+    { name: "Mortal Kombat (1992)", link: "/produto/29" },
   ];
 
   const atendimento = [
     { name: "FAQ", link: "/faq" },
-    { name: "Política de Troca", link: "/politica-de-troca" },
-    { name: "Garantia", link: "/garantia" },
-    { name: "Frete Grátis", link: "/frete-gratis" },
-    { name: "Suporte Técnico", link: "/suporte-tecnico" },
-    { name: "Parcerias", link: "/parcerias" },
+    //{ name: "Política de Troca", link: "/politica-de-troca" },
+    //{ name: "Garantia", link: "/garantia" },
+    //{ name: "Frete Grátis", link: "/frete-gratis" },
+    //{ name: "Suporte Técnico", link: "/suporte-tecnico" },
+    //{ name: "Parcerias", link: "/parcerias" },
   ];
 
   return (

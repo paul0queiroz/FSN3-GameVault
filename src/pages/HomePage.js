@@ -5,7 +5,15 @@ import zeldaCover from "../assets/zelda-wallpaper.jpg";
 import { Link } from "react-router-dom";
 import Newsletter from "../components/newsletter/Newsletter";
 
+import { useCart } from "../contexts/CartContext";
+import products from "../data/products";
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const { addToCart } = useCart();
+  const zeldaProduct = products[100];
+  const navigate = useNavigate();
+
   return (
     <section className="hero-section">
       {/* Círculos animados no fundo */}
@@ -42,16 +50,16 @@ const Hero = () => {
                 Explorar Jogos
               </Link>
 
-              <Link to={"/ofertas"} className="button-secondary">
+              {/* <Link to={"/ofertas"} className="button-secondary">
                 Ver Ofertas
-              </Link>
+              </Link> */}
             </div>
 
             {/* Estatísticas */}
             <div className="stats">
               <div className="stat">
                 <div className="value" style={{ color: "#60a5fa" }}>
-                  500+
+                  100+
                 </div>
                 <div className="label">Jogos</div>
               </div>
@@ -97,7 +105,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <button className="button-buy">Adicionar ao Carrinho</button>
+              <button className="button-buy" onClick={() => {addToCart(zeldaProduct, 1); navigate("/cart")}}>Adicionar ao Carrinho</button>
             </div>
           </div>
         </div>

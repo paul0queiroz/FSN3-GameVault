@@ -27,6 +27,9 @@ function ProductDetail() {
 
   const { addToCart } = useCart();
 
+  // Garante que vá para o início ao transicionar
+  window.scrollTo(0, 0);
+
   // Funções para modificar a quantidade
   const incrementQuantity = () =>
     setQuantity(quantity < 99 ? quantity + 1 : quantity);

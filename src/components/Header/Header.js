@@ -18,9 +18,9 @@ export default function Header() {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/promo">Promoções</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/produtos">Jogos</Link>
           </li>
