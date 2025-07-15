@@ -1,47 +1,47 @@
-#product-detail{
+#product-detail {
     border: 1px solid rgba(180, 180, 180, 0.596);
-    
+
     margin: auto;
     width: fit-content;
 }
 
-#product-side{
+#product-side {
     width: 100%;
     padding: 10px;
     margin: auto;
     max-width: 500px;
 }
 
-#product-image{
+#product-image {
     width: 400px;
     max-height: 500px;
     object-fit: fill;
     margin: auto;
 }
 
-#product-title{
+#product-title {
     border-bottom: 1px solid rgba(0, 0, 0, 0.123);
     padding: 10px 0px;
     margin-bottom: 10;
 }
 
-#product-description{
+#product-description {
     text-align: justify;
 }
 
-.product-price{
+.product-price {
     font-size: 2rem;
-    color:#00607F;
+    color: #00607F;
 }
 
-#shopping-info{
+#shopping-info {
     height: 100%;
-    
+
     align-items: center;
     justify-content: flex-end;
 }
 
-#control-quantity{
+#control-quantity {
     border: 1px solid black;
     display: flex;
     width: 100px;
@@ -51,7 +51,7 @@
     gap: 5px;
 }
 
-#control-quantity button{
+#control-quantity button {
     background-color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -59,30 +59,49 @@
     border: none;
 }
 
-#control-quantity button:hover{
+#control-quantity button:hover {
     background-color: rgba(238, 238, 238, 0.548);
 }
 
-#control-quantity span{
+#control-quantity span {
     font-family: roboto;
     font-size: 20px;
     font-weight: bold;
 }
 
+#product-category-tag {
+    position: absolute;
+    color: white;
+    background: linear-gradient(45deg, #a020f0cb, #892be2c7);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    width: fit-content;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
 /* Medium (md) */
-@media (min-width: 768px){
-    #product-detail{    
+@media (min-width: 768px) {
+    #product-detail {
         box-shadow: 3px 2px #e9e9e97e;
         border-radius: 0px 50px 50px 0px;
 
         justify-content: center;
     }
 
-    #product-side{
+    #product-side {
         margin: 0px;
     }
 
-    #product-image{
+    #product-image {
         margin: 0px;
         height: 500px;
     }

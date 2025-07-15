@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import ProductCard from "../components/ProductCard/ProductCard";
 import productsData from "../data/products";
 import "../styles/Products.css";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const currentCategory = useParams().category;
+  const navigate = useNavigate();
 
   const categories = [
     "Todos",
@@ -32,10 +35,27 @@ const Products = () => {
     "Shoot 'em up",
   ];
 
+  // Verificar a categoria selecionada na URL
+  if(currentCategory !== undefined){
+    if(selectedCategory != currentCategory){
+      // Procura a categoria na lista
+      const category = categories.find( (categoria) => categoria.toLowerCase() === currentCategory.toLocaleLowerCase() );
+      
+      // Verifica se a URL tem uma categoria válida
+      if( category !== undefined ){
+        setSelectedCategory(currentCategory)
+      }
+      else
+        return <Navigate to="/produtos" />;
+    }
+  }
+  else if(selectedCategory != "Todos")
+    setSelectedCategory("Todos")
+
   const filteredProducts =
     selectedCategory === "Todos"
       ? productsData
-      : productsData.filter((product) => product.category === selectedCategory);
+      : productsData.filter((product) => product.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
     <div className="products-page-container">
@@ -49,8 +69,8 @@ const Products = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                className={selectedCategory === category ? "active" : ""}
-                onClick={() => setSelectedCategory(category)}
+                className={selectedCategory.toLowerCase() === category.toLowerCase() ? "active" : ""}
+                onClick={() => navigate(category == "Todos" ? "/produtos" : `/produtos/${category}`)}
                 aria-label={category}
               >
                 {category}

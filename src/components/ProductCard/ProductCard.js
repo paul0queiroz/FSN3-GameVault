@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      <div className="product-category-tag">{product.category}</div>
+      <div className="product-category-tag"><Link to={`/produtos/${product.category}`} style={{ textDecoration: 'none', color: 'inherit' }}>{product.category}</Link></div>
       <img src={product.image} alt={product.name} className="product-image" />
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>

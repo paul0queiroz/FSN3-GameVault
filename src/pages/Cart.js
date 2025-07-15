@@ -257,7 +257,7 @@ const Cart = () => {
                             style={{ width: "80px", height: "80px" }}
                           />
                           <div>
-                            <h6 className="mb-0">{item.name}</h6>
+                            <h6 className="mb-0"><Link to={`/produto/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>{item.name}</Link></h6>
                           </div>
                         </div>
                       </td>
