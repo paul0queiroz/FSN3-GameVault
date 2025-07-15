@@ -4,8 +4,12 @@
   overflow: hidden;
   max-width: 100%;
   background-color: rgba(30, 30, 40, 0.9);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -14,7 +18,9 @@
 
 .product-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
   border-color: rgba(160, 32, 240, 0.5);
 }
 
@@ -42,7 +48,7 @@
   object-fit: contain;
   background-color: #0f0f1a;
   padding: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .product-info {
@@ -59,16 +65,16 @@
   margin: 0 0 10px 0;
   color: #ffde59;
   text-shadow: 0 0 5px rgba(255, 222, 89, 0.4);
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
 .product-price {
-  font-size: 24px; 
+  font-size: 24px;
   font-weight: bold;
-  color: #7aff82; 
+  color: #7aff82;
   margin-top: auto;
-  margin-bottom: 20px; 
-  font-family: 'Press Start 2P', cursive, monospace;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .product-actions {
@@ -105,7 +111,9 @@
 .btn-card:hover {
   background: linear-gradient(45deg, #8a2be2, #a020f0) !important;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(160, 32, 240, 0.7);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(160, 32, 240, 0.7);
 }
 
 .btn-card-transparant {

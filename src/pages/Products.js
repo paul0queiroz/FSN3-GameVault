@@ -36,26 +36,28 @@ const Products = () => {
   ];
 
   // Verificar a categoria selecionada na URL
-  if(currentCategory !== undefined){
-    if(selectedCategory != currentCategory){
+  if (currentCategory !== undefined) {
+    if (selectedCategory != currentCategory) {
       // Procura a categoria na lista
-      const category = categories.find( (categoria) => categoria.toLowerCase() === currentCategory.toLocaleLowerCase() );
-      
+      const category = categories.find(
+        (categoria) =>
+          categoria.toLowerCase() === currentCategory.toLocaleLowerCase()
+      );
+
       // Verifica se a URL tem uma categoria válida
-      if( category !== undefined ){
-        setSelectedCategory(currentCategory)
-      }
-      else
-        return <Navigate to="/produtos" />;
+      if (category !== undefined) {
+        setSelectedCategory(currentCategory);
+      } else return <Navigate to="/produtos" />;
     }
-  }
-  else if(selectedCategory != "Todos")
-    setSelectedCategory("Todos")
+  } else if (selectedCategory != "Todos") setSelectedCategory("Todos");
 
   const filteredProducts =
     selectedCategory === "Todos"
       ? productsData
-      : productsData.filter((product) => product.category.toLowerCase() === selectedCategory.toLowerCase());
+      : productsData.filter(
+          (product) =>
+            product.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
 
   return (
     <div className="products-page-container">
@@ -63,14 +65,23 @@ const Products = () => {
         <aside className="sidebar-content">
           <h2>Clássicos Retrô em Evidência</h2>
           <p>
-            Mergulhe na nostalgia dos videogames com jogos lançados até o ano de 2010.
+            Mergulhe na nostalgia dos videogames com jogos lançados até o ano de
+            2010.
           </p>
           <div className="category-list">
             {categories.map((category) => (
               <button
                 key={category}
-                className={selectedCategory.toLowerCase() === category.toLowerCase() ? "active" : ""}
-                onClick={() => navigate(category == "Todos" ? "/produtos" : `/produtos/${category}`)}
+                className={
+                  selectedCategory.toLowerCase() === category.toLowerCase()
+                    ? "active"
+                    : ""
+                }
+                onClick={() =>
+                  navigate(
+                    category == "Todos" ? "/produtos" : `/produtos/${category}`
+                  )
+                }
                 aria-label={category}
               >
                 {category}

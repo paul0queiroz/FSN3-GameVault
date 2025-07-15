@@ -4,6 +4,7 @@ import "../styles/Home.css";
 import zeldaCover from "../assets/zelda-wallpaper.jpg";
 import { Link } from "react-router-dom";
 import Newsletter from "../components/newsletter/Newsletter";
+import ProductGrid from "../components/ProductShowCase/productsShowCase";
 
 import { useCart } from "../contexts/CartContext";
 import products from "../data/products";
@@ -105,11 +106,20 @@ const Hero = () => {
                 </div>
               </div>
 
-              <button className="button-buy" onClick={() => {addToCart(zeldaProduct, 1); navigate("/cart")}}>Comprar Agora</button>
+              <button
+                className="button-buy"
+                onClick={() => {
+                  addToCart(zeldaProduct, 1);
+                  navigate("/cart");
+                }}
+              >
+                Comprar Agora
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <ProductGrid />
       <Newsletter />
     </section>
   );

@@ -3,7 +3,7 @@
   overflow: hidden; /* overflow-hidden */
 
   /* Gradiente de fundo da esquerda para a direita */
-  background: linear-gradient(to right, #312e81, #6b21a8, #be185d);
+  background: linear-gradient(to top, #312e81, #6b21a8, #be185d);
   /* As cores acima são equivalentes ao:
      from-indigo-900 (#312e81)
      via-purple-900 (#6b21a8)
