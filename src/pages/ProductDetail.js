@@ -40,7 +40,7 @@ function ProductDetail() {
   if (product === undefined) return <Navigate to="/404" />;
 
   return (
-    <>
+    <Container fluid className="m-0 p-0 w-100 h-100" id="page-product-info">
       <Container
         fluid
         id="product-detail"
@@ -101,7 +101,7 @@ function ProductDetail() {
           </Container>
         </Container>
       </Container>
-    </>
+    </Container>
   );
 }
 

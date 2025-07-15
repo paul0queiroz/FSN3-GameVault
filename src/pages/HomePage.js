@@ -105,7 +105,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <button className="button-buy" onClick={() => {addToCart(zeldaProduct, 1); navigate("/cart")}}>Adicionar ao Carrinho</button>
+              <button className="button-buy" onClick={() => {addToCart(zeldaProduct, 1); navigate("/cart")}}>Comprar Agora</button>
             </div>
           </div>
         </div>
