@@ -1,0 +1,38 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./ProductCard.css";
+import { useCart } from "../../contexts/CartContext";
+import { Button } from "react-bootstrap";
+
+const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
+
+  return (
+    <div className="product-card">
+      <div className="product-category-tag">{product.category}</div>
+      <img src={product.image} alt={product.name} className="product-image" />
+      <div className="product-info">
+        <h3 className="product-name">{product.name}</h3>
+        <p className="product-price">R${product.price}</p>
+        <div className="product-actions">
+          <Button
+            as={Link}
+            to={`/produto/${product.id}`}
+            variant="dark"
+            className="btn-card"
+          >
+            Ver Detalhes
+          </Button>
+          <Button
+            className="btn-card-transparant"
+            onClick={() => addToCart(product, 1)}
+          >
+            Adicionar ao carrinho
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
