@@ -3,6 +3,7 @@ import { Play, Star, Zap } from "lucide-react";
 import "../styles/Home.css";
 import zeldaCover from "../assets/zelda-wallpaper.jpg";
 import { Link } from "react-router-dom";
+import Newsletter from "../components/newsletter/Newsletter";
 
 const Hero = () => {
   return (
@@ -20,7 +21,7 @@ const Hero = () => {
           {/* Coluna Esquerda */}
           <div className="hero-left">
             <div className="hero-text">
-              <h1 className="hero-title">
+              <h1 className="hero-title title-retro">
                 <span className="gradient">Reviva</span>
                 <br />
                 <span>os Clássicos</span>
@@ -101,6 +102,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <Newsletter />
     </section>
   );
 };
