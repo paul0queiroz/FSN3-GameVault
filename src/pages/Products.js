@@ -3,11 +3,22 @@ import ProductCard from "../components/ProductCard/ProductCard";
 import productsData from "../data/products";
 import "../styles/Products.css";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { Pagination } from "react-bootstrap";
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const currentCategory = useParams().category;
   const navigate = useNavigate();
+
+  const [currentPagination, setCurrentPagination] = useState(1);
+  const numberProductsPerPage = 10;
+  let numberPagination = undefined;
+  let itemsPagination = [];
+
+  const selectPaginationItem = ( pageNumber) => { 
+    setCurrentPagination(pageNumber);
+    window.scrollTo(0, 0);
+  };
 
   const categories = [
     "Todos",
@@ -55,9 +66,20 @@ const Products = () => {
     selectedCategory === "Todos"
       ? productsData
       : productsData.filter(
-          (product) =>
-            product.category.toLowerCase() === selectedCategory.toLowerCase()
-        );
+        (product) =>
+          product.category.toLowerCase() === selectedCategory.toLowerCase()
+      );
+
+  numberPagination = Math.ceil(filteredProducts.length / numberProductsPerPage)
+  for (let number = 1; number <= numberPagination; number++) {
+    itemsPagination.push(
+      <Pagination.Item key={number} active={number === currentPagination} onClick={() =>
+         (number !== currentPagination) ? selectPaginationItem(number) : undefined}
+      >
+        {number}
+      </Pagination.Item>,
+    );
+  }
 
   return (
     <div className="products-page-container">
@@ -91,10 +113,22 @@ const Products = () => {
         </aside>
 
         <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {
+            filteredProducts.slice(
+              (currentPagination > 1) ? (currentPagination - 1) * numberProductsPerPage : 0,
+              currentPagination * numberProductsPerPage
+            ).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          }
         </div>
+
+        {numberPagination > 1 ? (
+          <div className="d-flex flex-row justify-content-center align-items-center">
+            <Pagination className="m-0">{itemsPagination}</Pagination>
+          </div>
+        ) : undefined}
+
       </div>
     </div>
   );
