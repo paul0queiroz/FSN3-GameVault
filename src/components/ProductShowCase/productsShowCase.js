@@ -1,5 +1,6 @@
 import ProductCard from "../ProductCard/ProductCard";
 import "../../styles/productsShowCase.css"; // importa o CSS externo
+import products from "../../data/products";
 
 const ProductGrid = () => {
   const featuredGames = [
@@ -113,7 +114,7 @@ const ProductGrid = () => {
 
         {/* Filter Badges */}
         <div className="product-grid-filters">
-          {["Todos", "Aventura", "FPS", "RPG", "Ação", "Plataforma"].map(
+          {["Aventura", "FPS", "RPG", "Ação", "Plataforma"].map(
             (filter) => (
               <button key={filter} className="filter-button">
                 {filter}
@@ -125,7 +126,7 @@ const ProductGrid = () => {
         {/* Products Grid */}
         <div className="product-grid-list">
           {featuredGames.map((game) => (
-            <ProductCard key={game.id} product={game} />
+            <ProductCard key={game.id} product={products[game.id]} />
           ))}
         </div>
 

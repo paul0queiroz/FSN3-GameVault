@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 import { ShoppingCart, Menu } from "lucide-react";
 import Logo from "../../assets/GameVaultLogo.png";
@@ -8,6 +8,18 @@ import "../../styles/Header.css";
 export default function Header() {
   const { itemCount } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // Função para verificar se a rota está ativa
+  const isActive = (rota) => {
+    // Ativa o estilo de ativo em "Jogos" se a rota for /produtos ou /produto
+    if (rota === '/produtos'){
+      return pathname === '/produtos' || pathname.startsWith('/produto');
+    }
+
+    // Ativa se a rota especificada coincidir com a rota da página
+    return pathname === rota;
+  };
 
   return (
     <nav className="header">
@@ -26,13 +38,13 @@ export default function Header() {
 
         <ul className={`header__nav ${menuOpen ? "is-open" : ""}`}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className={isActive("/")?"active":""}>Home</Link>
           </li>
           <li>
-            <Link to="/produtos">Jogos</Link>
+            <Link to="/produtos" className={isActive("/produtos")?"active":""}>Jogos</Link>
           </li>
           <li>
-            <Link to="/contato">Contato</Link>
+            <Link to="/contato" className={isActive("/contato")?"active":""}>Contato</Link>
           </li>
           <li className="header__cart">
             <Link to="/cart" className="cart-link">

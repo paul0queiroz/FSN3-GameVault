@@ -46,6 +46,10 @@
   color: #ffa500;
 }
 
+.header__nav li a.active {
+  color: #ffa500;
+}
+
 .header__cart {
   position: relative;
   margin-left: 2rem;
