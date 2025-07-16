@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
             Ver Detalhes
           </Button>
           <Button
-            className="btn-card-transparant"
+            className="btn-card-secondary"
             onClick={() => addToCart(product, 1)}
           >
             Adicionar ao carrinho
