@@ -5,7 +5,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import products from "../data/products";
 import { useCart } from "../contexts/CartContext";
 
-import { ButtonGroup, Button, Container, Image } from "react-bootstrap";
+import { ButtonGroup, Button, Container, Image, Breadcrumb } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 
 const notifySuccess = (Mensagem) =>
@@ -41,15 +41,27 @@ function ProductDetail() {
 
   return (
     <Container fluid className="m-0 p-0 w-100 h-100" id="page-product-info">
+
       <Container
         fluid
         id="product-detail"
-        className="d-flex flex-column flex-md-row gap-1 gap-md-3 p-3"
+        className="d-flex flex-column justify-content-center flex-md-row gap-1 gap-md-3 p-3"
       >
+
         <ToastContainer />
         <Container fluid className="m-0 p-0 w-100 d-flex flex-column justify-content-center align-items-center">
           <div className="w-100 d-flex justify-content-end">
-          <div id="product-category-tag"><Link to={`/produtos/${product.category}`} style={{ textDecoration: 'none', color: 'inherit' }}>{product.category}</Link></div>
+
+            <div className="w-100 mx-4">
+              <Breadcrumb className="p-0 my-0 mx-auto d-flex justify-content-center" style={{ "height": "20px", "font-size": "10px" }}>
+                <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
+                <Breadcrumb.Item><Link to="/produtos">Produtos</Link></Breadcrumb.Item>
+                <Breadcrumb.Item><Link to={`/produtos/${product.category}`}>{product.category}</Link></Breadcrumb.Item>
+                <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
+              </Breadcrumb>
+            </div>
+
+            <div id="product-category-tag"><Link to={`/produtos/${product.category}`} style={{ textDecoration: 'none', color: 'inherit' }}>{product.category}</Link></div>
           </div>
           <Image
             src={product.image}
