@@ -99,10 +99,12 @@ const Products = () => {
                     ? "active"
                     : ""
                 }
-                onClick={() =>
+                onClick={() =>{
                   navigate(
                     category == "Todos" ? "/produtos" : `/produtos/${category}`
-                  )
+                  );
+                  setCurrentPagination(1);
+                }
                 }
                 aria-label={category}
               >
