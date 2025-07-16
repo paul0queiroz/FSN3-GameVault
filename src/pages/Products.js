@@ -63,7 +63,7 @@ const Products = () => {
     <div className="products-page-container">
       <div className="container">
         <aside className="sidebar-content">
-          <h2>Clássicos Retrô em Evidência</h2>
+          <h2><span className="text-glow">Clássicos</span> Retrô em Evidência</h2>
           <p>
             Mergulhe na nostalgia dos videogames com jogos lançados até o ano de
             2010.
