@@ -56,6 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  display: none;
 }
 
 .cart-link {
@@ -108,6 +109,10 @@
     right: 0;
     width: 100%;
     padding: 1.5rem 2rem;
+  }
+
+  .header__cart{
+    display: flex;
   }
 
   .header__nav.is-open {

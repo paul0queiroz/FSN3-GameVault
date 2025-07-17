@@ -103,6 +103,7 @@
   font-size: 3rem;
   font-weight: 700;
   color: white;
+  font-family: "Press Start 2P", system-ui;
 }
 
 @media (min-width: 1024px) {

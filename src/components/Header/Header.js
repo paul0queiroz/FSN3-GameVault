@@ -13,8 +13,8 @@ export default function Header() {
   // Função para verificar se a rota está ativa
   const isActive = (rota) => {
     // Ativa o estilo de ativo em "Jogos" se a rota for /produtos ou /produto
-    if (rota === '/produtos'){
-      return pathname === '/produtos' || pathname.startsWith('/produto');
+    if (rota === "/produtos") {
+      return pathname === "/produtos" || pathname.startsWith("/produto");
     }
 
     // Ativa se a rota especificada coincidir com a rota da página
@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <nav className="header">
-      <div className="header__container">
+      <div className="header__container ">
         <Link to="/" className="header__logo">
           <img src={Logo} alt="GameVault Logo" />
         </Link>
@@ -38,13 +38,30 @@ export default function Header() {
 
         <ul className={`header__nav ${menuOpen ? "is-open" : ""}`}>
           <li>
-            <Link to="/" className={isActive("/")?"active":""}>Home</Link>
+            <Link to="/" className={isActive("/") ? "active" : ""}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/produtos" className={isActive("/produtos")?"active":""}>Jogos</Link>
+            <Link
+              to="/produtos"
+              className={isActive("/produtos") ? "active" : ""}
+            >
+              Jogos
+            </Link>
           </li>
           <li>
-            <Link to="/contato" className={isActive("/contato")?"active":""}>Contato</Link>
+            <Link
+              to="/contato"
+              className={isActive("/contato") ? "active" : ""}
+            >
+              Contato
+            </Link>
+          </li>
+          <li>
+            <Link to={"/cart"} className={isActive("/cart") ? "active" : ""}>
+              Cart
+            </Link>
           </li>
           <li className="header__cart">
             <Link to="/cart" className="cart-link">

@@ -1,16 +1,96 @@
 import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
     <section
-      className="position-relative text-secondary d-flex align-items-center justify-content-center"
-      style={{ minHeight: "90vh", width: "100%" }}
+      className="position-relative overflow-hidden"
+      style={{
+        minHeight: "90vh",
+        width: "100%",
+        background: "linear-gradient(to top, #312e81, #6b21a8, #be185d)",
+        padding: "5rem 1rem",
+      }}
     >
-      <div className="container px-5 py-5">
+      {/* Círculos animados no fundo */}
+      <div
+        className="position-absolute w-100 h-100"
+        style={{ top: 0, left: 0 }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: "25%",
+            left: "25%",
+            width: "8rem",
+            height: "8rem",
+            backgroundColor: "#3b82f6",
+            borderRadius: "9999px",
+            filter: "blur(40px)",
+            animation: "pulse 2s infinite",
+            opacity: 0.2,
+          }}
+        ></div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: "25%",
+            right: "25%",
+            width: "10rem",
+            height: "10rem",
+            backgroundColor: "#8b5cf6",
+            borderRadius: "9999px",
+            filter: "blur(40px)",
+            animation: "pulse 2s infinite 1s",
+            opacity: 0.2,
+          }}
+        ></div>
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "7rem",
+            height: "7rem",
+            backgroundColor: "#ec4899",
+            borderRadius: "9999px",
+            filter: "blur(40px)",
+            animation: "pulse 2s infinite 0.5s",
+            opacity: 0.2,
+          }}
+        ></div>
+      </div>
+
+      {/* Container principal */}
+      <div className="px-5 py-5 position-relative" style={{ zIndex: 10 }}>
         {/* Header */}
         <div className="text-center w-100 mb-4">
-          <h1 className="h2 fw-medium mb-3 text-dark">Entre em contato</h1>
-          <p className="mx-auto w-75 lead">
+          <h1
+            className="fw-bold mb-3 text-white"
+            style={{
+              fontSize: "3rem",
+              fontFamily: '"Press Start 2P", system-ui',
+            }}
+          >
+            <span
+              style={{
+                background: "linear-gradient(to right, #60a5fa, #a78bfa)",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              Entre em Contato
+            </span>
+          </h1>
+          <p
+            className="mx-auto lead"
+            style={{
+              maxWidth: "600px",
+              color: "#d1d5db",
+              fontSize: "1.25rem",
+            }}
+          >
             Algum jogo não está funcionando? Tem alguma dúvida? Entre em contato
             conosco.
           </p>
@@ -19,127 +99,199 @@ const Contact = () => {
         {/* Form */}
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8">
-            <form className="row g-3">
-              <div className="col-md-6">
-                <label htmlFor="name" className="form-label small">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="form-control"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div className="col-md-6">
-                <label htmlFor="email" className="form-label small">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="form-control"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div className="col-12">
-                <label htmlFor="message" className="form-label small">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="form-control"
-                  rows="5"
-                  placeholder="Your message..."
-                />
-              </div>
-              <div className="col-12 text-center">
-                <button type="submit" className="btn btn-primary btn-lg">
-                  Send Message
-                </button>
-              </div>
-            </form>
+            <div
+              className="p-4 rounded-3"
+              style={{
+                background:
+                  "linear-gradient(to bottom right, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.5))",
+                backdropFilter: "blur(4px)",
+                border: "1px solid rgba(55, 65, 81, 0.5)",
+                animation: "float 3s ease-in-out infinite",
+              }}
+            >
+              <form className="row g-3">
+                <div className="col-md-6">
+                  <label htmlFor="name" className="form-label small text-white">
+                    Nome
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="form-control "
+                    placeholder="Seu nome"
+                    style={{
+                      background: "rgba(31, 41, 55, 0.5), text-white",
+                    }}
+                  />
+                </div>
+                <div className="col-md-6">
+                  <label
+                    htmlFor="email"
+                    className="form-label small text-white"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="form-control text-white"
+                    placeholder="voce@exemplo.com"
+                    style={{ background: "rgba(31, 41, 55, 0.5)" }}
+                  />
+                </div>
+                <div className="col-12">
+                  <label
+                    htmlFor="message"
+                    className="form-label small text-white"
+                  >
+                    Mensagem
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="form-control text-white"
+                    rows="5"
+                    placeholder="Sua mensagem..."
+                    style={{ background: "rgba(31, 41, 55, 0.5)" }}
+                  />
+                </div>
+                <div className="col-12 text-center mt-4">
+                  <button
+                    type="submit"
+                    className="btn btn-lg text-white fw-bold border-0"
+                    style={{
+                      background: "linear-gradient(to right, #3b82f6, #8b5cf6)",
+                      padding: "1rem 2rem",
+                      width: "100%",
+                    }}
+                  >
+                    Enviar Mensagem
+                  </button>
+                </div>
+              </form>
 
-            {/* Contact Info */}
-            <div className="border-top pt-4 mt-4 text-center">
-              <a
-                href="mailto:example@email.com"
-                className="d-block mb-2 text-primary"
-              >
-                emailFake@email.com
-              </a>
-              <div className="d-inline-flex">
-                <a href="#" className="me-3 text-secondary">
-                  {/* Facebook */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                  </svg>
+              {/* Contact Info */}
+              <div className="border-top border-secondary pt-4 mt-4 text-center">
+                <a
+                  href="mailto:suporte@retrogames.com"
+                  className="d-block mb-3 fw-bold"
+                  style={{
+                    color: "#60a5fa",
+                    textDecoration: "none",
+                  }}
+                >
+                  suporte@gamevault.com
                 </a>
-                <a href="#" className="me-3 text-secondary">
-                  {/* Twitter */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
+                <div className="d-flex justify-content-center gap-3">
+                  <Link
+                    to="#"
+                    className="text-white"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "50%",
+                      background: "rgba(31, 41, 55, 0.5)",
+                      border: "1px solid #4b5563",
+                    }}
                   >
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                  </svg>
-                </a>
-                <a href="#" className="me-3 text-secondary">
-                  {/* Instagram */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
+                    <FaFacebook size={20} />
+                  </Link>
+                  <Link
+                    to="#"
+                    className="text-white"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "50%",
+                      background: "rgba(31, 41, 55, 0.5)",
+                      border: "1px solid #4b5563",
+                    }}
                   >
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                    <circle cx="17.5" cy="6.5" r="0.5" />
-                  </svg>
-                </a>
-                <a href="#" className="text-secondary">
-                  {/* LinkedIn */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
+                    <FaTwitter size={20} />
+                  </Link>
+                  <Link
+                    to="#"
+                    className="text-white"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "50%",
+                      background: "rgba(31, 41, 55, 0.5)",
+                      border: "1px solid #4b5563",
+                    }}
                   >
-                    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                  </svg>
-                </a>
+                    <FaInstagram size={20} />
+                  </Link>
+                  <Link
+                    to="#"
+                    className="text-white"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "50%",
+                      background: "rgba(31, 41, 55, 0.5)",
+                      border: "1px solid #4b5563",
+                    }}
+                  >
+                    <FaLinkedin size={20} />
+                  </Link>
+                </div>
+
+                <div className="mt-4">
+                  <Link
+                    to="/"
+                    className="btn btn-sm text-white"
+                    style={{
+                      background: "rgba(31, 41, 55, 0.5)",
+                      border: "1px solid #4b5563",
+                    }}
+                  >
+                    ← Voltar para Home
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Estilos de animação */}
+      <style>
+        {`
+          @keyframes pulse {
+            0%, 100% {
+              opacity: 0.2;
+              transform: scale(1);
+            }
+            50% {
+              opacity: 0.4;
+              transform: scale(1.05);
+            }
+          }
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-5px);
+            }
+          }
+        `}
+      </style>
     </section>
   );
 };

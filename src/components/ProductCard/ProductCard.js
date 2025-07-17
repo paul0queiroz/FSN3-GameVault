@@ -7,9 +7,7 @@ import { Button } from "react-bootstrap";
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
-  {
-    if (!product) return null;
-  }
+  if (!product) return null;
 
   return (
     <div className="product-card">
@@ -24,8 +22,16 @@ const ProductCard = ({ product }) => {
       <img src={product.image} alt={product.name} className="product-image" />
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
-        <p className="product-price">R${product.price}</p>
-        <div className="product-actions">
+        <p
+          className="product-price"
+          style={{ fontFamily: "Press Start 2P", fontSize: "1.2rem" }}
+        >
+          R${product.price}
+        </p>
+        <div
+          className="product-actions"
+          style={{ width: "100%", maxHeight: "30%", borderRadius: "10px" }}
+        >
           <Button
             as={Link}
             to={`/produto/${product.id}`}

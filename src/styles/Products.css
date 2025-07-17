@@ -31,6 +31,8 @@
   color: #fff;
   letter-spacing: 2px;
   font-weight: bold;
+  font-family: "Press Start 2P", system-ui;
+  text-shadow: 10px 10px 15px rgba(255, 255, 255, 0.5);
 }
 
 .sidebar-content p {
@@ -51,12 +53,12 @@
 
 .category-list button {
   border: 2px solid #4b5563;
-  background: #372259 !important;
+  background: #372259;
   color: #d1d5db;
   padding: 12px 25px;
   border-radius: 30px;
   font-weight: 700;
-  transition: all 0.4s ease-in-out !important;
+  transition: all 0.4s ease-in-out ;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -78,6 +80,22 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   padding: 0 20px;
+}
+
+.product-name{
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Press Start 2P", system-ui;
+  text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.product-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #3b82f6;
 }
 
 @media only screen and (max-width: 1023px) {
