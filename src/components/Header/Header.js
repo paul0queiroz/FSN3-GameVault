@@ -25,7 +25,8 @@ export default function Header() {
     <nav className="header">
       <div className="header__container ">
         <Link to="/" className="header__logo">
-          <img src={Logo} alt="GameVault Logo" />
+          <div className="footer-logo-circle">R</div>
+          {/* <img src={Logo} alt="GameVault Logo" /> */}
         </Link>
 
         <button

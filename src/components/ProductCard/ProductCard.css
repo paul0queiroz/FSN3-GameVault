@@ -4,9 +4,12 @@
   overflow: hidden;
   max-width: 100%;
   background-color: #221b3d;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.5),
     inset 0 0 10px rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -15,7 +18,8 @@
 
 .product-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.6),
     inset 0 0 15px rgba(255, 255, 255, 0.1);
   border-color: rgba(160, 32, 240, 0.5);
 }
@@ -96,7 +100,7 @@
 .btn-card {
   background: linear-gradient(45deg, #a020f0, #8a2be2) !important;
   color: #fff !important;
-    transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn-card:hover {
@@ -108,7 +112,7 @@
 .btn-card-secondary {
   background-color: linear-gradient(to right, #10b981, #3b82f6) !important;
   color: #fff;
-    transition: all 0.3s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn-card-secondary:hover {

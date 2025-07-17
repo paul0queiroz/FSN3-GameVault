@@ -17,7 +17,7 @@ const Products = () => {
   let numberPagination = undefined;
   let itemsPagination = [];
 
-  const selectPaginationItem = ( pageNumber) => { 
+  const selectPaginationItem = (pageNumber) => {
     setCurrentPagination(pageNumber);
     window.scrollTo(0, 0);
   };
@@ -68,18 +68,24 @@ const Products = () => {
     selectedCategory === "Todos"
       ? productsData
       : productsData.filter(
-        (product) =>
-          product.category.toLowerCase() === selectedCategory.toLowerCase()
-      );
+          (product) =>
+            product.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
 
-  numberPagination = Math.ceil(filteredProducts.length / numberProductsPerPage)
+  numberPagination = Math.ceil(filteredProducts.length / numberProductsPerPage);
   for (let number = 1; number <= numberPagination; number++) {
     itemsPagination.push(
-      <Pagination.Item key={number} active={number === currentPagination} onClick={() =>
-         (number !== currentPagination) ? selectPaginationItem(number) : undefined}
+      <Pagination.Item
+        key={number}
+        active={number === currentPagination}
+        onClick={() =>
+          number !== currentPagination
+            ? selectPaginationItem(number)
+            : undefined
+        }
       >
         {number}
-      </Pagination.Item>,
+      </Pagination.Item>
     );
   }
 
@@ -88,7 +94,9 @@ const Products = () => {
       <ToastContainer />
       <div className="container">
         <aside className="sidebar-content">
-          <h2><span className="text-glow">Clássicos</span> Retrô em Evidência</h2>
+          <h2>
+            <span className="text-glow">Clássicos</span> Retrô em Evidência
+          </h2>
           <p>
             Mergulhe na nostalgia dos videogames com jogos lançados até o ano de
             2010.
@@ -102,13 +110,12 @@ const Products = () => {
                     ? "active"
                     : ""
                 }
-                onClick={() =>{
+                onClick={() => {
                   navigate(
                     category == "Todos" ? "/produtos" : `/produtos/${category}`
                   );
                   setCurrentPagination(1);
-                }
-                }
+                }}
                 aria-label={category}
               >
                 {category}
@@ -118,22 +125,25 @@ const Products = () => {
         </aside>
 
         <div className="product-grid">
-          {
-            filteredProducts.slice(
-              (currentPagination > 1) ? (currentPagination - 1) * numberProductsPerPage : 0,
+          {filteredProducts
+            .slice(
+              currentPagination > 1
+                ? (currentPagination - 1) * numberProductsPerPage
+                : 0,
               currentPagination * numberProductsPerPage
-            ).map((product) => (
+            )
+            .map((product) => (
               <ProductCard key={product.id} product={product} />
-            ))
-          }
+            ))}
         </div>
 
         {numberPagination > 1 ? (
-          <div className="d-flex flex-row justify-content-center align-items-center">
-            <Pagination className="m-0">{itemsPagination}</Pagination>
+          <div className="pagination-container">
+            <div className="pagination-items">
+              <Pagination className="m-0">{itemsPagination}</Pagination>
+            </div>
           </div>
         ) : undefined}
-
       </div>
     </div>
   );

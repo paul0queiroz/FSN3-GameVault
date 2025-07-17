@@ -1,6 +1,7 @@
 import ProductCard from "../ProductCard/ProductCard";
 import "../../styles/productsShowCase.css"; // importa o CSS externo
 import products from "../../data/products";
+import RandomizerGames from "../randomizer/randomizerGames";
 
 const ProductGrid = () => {
   const featuredGames = [
@@ -114,13 +115,11 @@ const ProductGrid = () => {
 
         {/* Filter Badges */}
         <div className="product-grid-filters">
-          {["Aventura", "FPS", "RPG", "Ação", "Plataforma"].map(
-            (filter) => (
-              <button key={filter} className="filter-button">
-                {filter}
-              </button>
-            )
-          )}
+          {["Aventura", "FPS", "RPG", "Ação", "Plataforma"].map((filter) => (
+            <button key={filter} className="filter-button">
+              {filter}
+            </button>
+          ))}
         </div>
 
         {/* Products Grid */}
@@ -131,9 +130,6 @@ const ProductGrid = () => {
         </div>
 
         {/* Load More Button */}
-        <div className="product-grid-load-more">
-          <button className="load-more-button">Carregar Mais Jogos</button>
-        </div>
       </div>
     </section>
   );

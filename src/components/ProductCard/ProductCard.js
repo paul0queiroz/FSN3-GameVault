@@ -56,9 +56,12 @@ const ProductCard = ({ product }) => {
           </Button>
           <Button
             className="btn-card-secondary"
-            onClick={() =>{ addToCart(product, 1); notifySuccess("Item adicionado ao carrinho.") }}
+            onClick={() => {
+              addToCart(product, 1);
+              notifySuccess("Item adicionado ao carrinho.");
+            }}
           >
-            Adicionar ao carrinho
+            Comprar Agora
           </Button>
         </div>
       </div>
