@@ -86,7 +86,7 @@ const products = [
     id: 10,
     name: "GTA: San Andreas",
     description: "Exploração e ação em mundo aberto com CJ em Los Santos.",
-    price: "112.90",
+    price: "72.90",
     image: "https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg",
     category: "Ação",
   },
@@ -958,6 +958,16 @@ const products = [
     price: "24.90",
     image:
       "https://upload.wikimedia.org/wikipedia/en/8/89/Dragon_Quest_V_Super_Famicom_front_cover.jpg",
+    category: "RPG",
+  },
+  {
+    id: 101,
+    name: "The Legend of Zelda: Skyward Sword",
+    description:
+      "Embarque em uma jornada épica que revela o início da cronologia da franquia Zelda. Assuma o papel de Link, um jovem cavaleiro de Skyloft, e voe pelos céus em seu Loftwing para resgatar sua amiga Zelda e enfrentar forças ancestrais que ameaçam o mundo abaixo das nuvens.",
+    price: 89.90,
+    image:
+      "https://upload.wikimedia.org/wikipedia/pt/7/7a/The_Legend_of_Zelda_Skyward_Sword_capa.png",
     category: "RPG",
   },
 ];

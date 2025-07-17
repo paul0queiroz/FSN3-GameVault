@@ -1,6 +1,7 @@
 .newsletter-section {
   padding: 4rem 1rem;
-  background: linear-gradient(to right, #1e3a8a, #6b21a8, #be185d);
+  background: linear-gradient(to bottom, #1e3a8a, #6b21a8, #be185d);
+  opacity: calc();
   position: relative;
   overflow: hidden;
   z-index: 1;

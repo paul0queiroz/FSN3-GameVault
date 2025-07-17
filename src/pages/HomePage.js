@@ -1,13 +1,26 @@
 import React from "react";
 import { Play, Star, Zap } from "lucide-react";
-import "../styles/Home.css";
-import zeldaCover from "../assets/zelda-wallpaper.jpg";
 import { Link } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
+import zeldaCover from "../assets/zelda-wallpaper.jpg";
 import Newsletter from "../components/newsletter/Newsletter";
+import ProductGrid from "../components/ProductShowCase/productsShowCase";
+import products from "../data/products";
+import ButtonRandomizer from "../components/buttonRandomizer/buttonRandomizer";
+import "../styles/Home.css";
 
 const Hero = () => {
+  const { addToCart } = useCart();
+  const zeldaProduct = products[100];
+  const navigate = useNavigate();
+
   return (
     <section className="hero-section">
+      <ToastContainer />
+
       {/* Círculos animados no fundo */}
       <div className="hero-bg">
         <div className="hero-circle-1"></div>
@@ -42,16 +55,16 @@ const Hero = () => {
                 Explorar Jogos
               </Link>
 
-              <Link to={"/ofertas"} className="button-secondary">
+              {/* <Link to={"/ofertas"} className="button-secondary">
                 Ver Ofertas
-              </Link>
+              </Link> */}
             </div>
 
             {/* Estatísticas */}
             <div className="stats">
               <div className="stat">
                 <div className="value" style={{ color: "#60a5fa" }}>
-                  500+
+                  100+
                 </div>
                 <div className="label">Jogos</div>
               </div>
@@ -97,11 +110,21 @@ const Hero = () => {
                 </div>
               </div>
 
-              <button className="button-buy">Adicionar ao Carrinho</button>
+              <button
+                className="button-buy"
+                onClick={() => {
+                  addToCart(zeldaProduct, 1);
+                  navigate("/cart");
+                }}
+              >
+                Comprar Agora
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <ProductGrid />
+      <ButtonRandomizer />
       <Newsletter />
     </section>
   );

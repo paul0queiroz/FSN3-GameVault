@@ -3,7 +3,7 @@
   overflow: hidden; /* overflow-hidden */
 
   /* Gradiente de fundo da esquerda para a direita */
-  background: linear-gradient(to right, #312e81, #6b21a8, #be185d);
+  background: linear-gradient(to top, #be185d, #6b21a8, #312e81);
   /* As cores acima são equivalentes ao:
      from-indigo-900 (#312e81)
      via-purple-900 (#6b21a8)
@@ -17,7 +17,7 @@
 /* Se "cyber-grid" for uma classe personalizada que você criou (decorativa ou animada),
    você precisa definir esse estilo manualmente também. Exemplo básico: */
 .cyber-grid {
-  background-image: url("/public/images/background-grid.jpg"); /* ou qualquer padrão que estiver usando */
+  background-image: url("/public/images/background-grid.jpg");
   opacity: 0.1;
   mix-blend-mode: overlay;
 }
@@ -100,9 +100,10 @@
 
 /* ======= Typography ======= */
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 500;
   color: white;
+  font-family: "Press Start 2P", system-ui;
 }
 
 @media (min-width: 1024px) {
@@ -112,7 +113,7 @@
 }
 
 .hero-title span.gradient {
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  background: linear-gradient(to right, #60a5fa, #be185d);
   -webkit-background-clip: text;
   color: transparent;
 }
