@@ -10,6 +10,8 @@ import { useCart } from "../contexts/CartContext";
 import products from "../data/products";
 import { useNavigate } from "react-router-dom";
 
+import { ToastContainer } from "react-toastify";
+
 const Hero = () => {
   const { addToCart } = useCart();
   const zeldaProduct = products[100];
@@ -17,6 +19,8 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
+      <ToastContainer/>
+      
       {/* Círculos animados no fundo */}
       <div className="hero-bg">
         <div className="hero-circle-1"></div>

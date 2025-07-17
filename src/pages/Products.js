@@ -5,6 +5,8 @@ import "../styles/Products.css";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { Pagination } from "react-bootstrap";
 
+import { ToastContainer } from "react-toastify";
+
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const currentCategory = useParams().category;
@@ -83,6 +85,7 @@ const Products = () => {
 
   return (
     <div className="products-page-container">
+      <ToastContainer />
       <div className="container">
         <aside className="sidebar-content">
           <h2><span className="text-glow">Clássicos</span> Retrô em Evidência</h2>

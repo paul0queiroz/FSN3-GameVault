@@ -53,7 +53,7 @@ function ProductDetail() {
           <div className="w-100 d-flex justify-content-end">
 
             <div className="w-100 mx-4">
-              <Breadcrumb className="p-0 my-0 mx-auto d-flex justify-content-center" style={{ "height": "20px", "font-size": "10px" }}>
+              <Breadcrumb className="p-0 my-0 mx-auto d-flex justify-content-center" style={{ "height": "20px", "font-size": "10px"}}>
                 <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to="/produtos">Produtos</Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to={`/produtos/${product.category}`}>{product.category}</Link></Breadcrumb.Item>

@@ -4,10 +4,19 @@
 }
 
 #product-detail {
-    background-color: #e2daeb;
+    background-color: #221b3d;
 
     margin: 20px auto;
     width: fit-content;
+    color: #e0e0e0;
+}
+
+ol.breadcrumb li, ol.breadcrumb .breadcrumb-item::before, ol.breadcrumb .breadcrumb-item{
+    color: #e0e0e0;
+}
+
+ol.breadcrumb a{
+    color: rgb(201, 38, 119);
 }
 
 #product-side {
@@ -25,16 +34,18 @@
 }
 
 #product-title {
-    color: #1f1135;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.123);
     padding: 10px 0px;
     margin-bottom: 10;
+
+    font-family: "Press Start 2P", system-ui;
+    color: white;
+    
 }
 
 #product-description {
     text-align: justify;
-    color: #1b1325;
     font-family: "Proxima Nova", sans-serif;
     font-size: 19px;
 }
@@ -78,11 +89,12 @@
     font-family: roboto;
     font-size: 20px;
     font-weight: bold;
+    color: black;
 }
 
 #product-category-tag {
     position: absolute;
-    color: white;
+    color: #e0e0e0;
     background: linear-gradient(45deg, #a020f0cb, #892be2c7);
     padding: 6px 12px;
     border-radius: 50px;

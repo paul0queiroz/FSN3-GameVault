@@ -4,6 +4,20 @@ import "./ProductCard.css";
 import { useCart } from "../../contexts/CartContext";
 import { Button } from "react-bootstrap";
 
+import { toast } from "react-toastify";
+
+const notifySuccess = (Mensagem) =>
+  toast.info(Mensagem, {
+    position: "bottom-right",
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+  });
+
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
@@ -42,7 +56,7 @@ const ProductCard = ({ product }) => {
           </Button>
           <Button
             className="btn-card-secondary"
-            onClick={() => addToCart(product, 1)}
+            onClick={() =>{ addToCart(product, 1); notifySuccess("Item adicionado ao carrinho.") }}
           >
             Adicionar ao carrinho
           </Button>
